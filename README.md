@@ -1,3 +1,11 @@
 # TOEFL Simulation Using Laravel and Jquery
 
 this is my project about TOEFL Simulation
+
+## Laravel
+
+this toefl simulation using Laravel, because it is eazy to manage api, everything has been set up.
+
+## JQUERY
+
+I also use Jquery to code javascript faster
