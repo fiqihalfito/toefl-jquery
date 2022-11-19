@@ -1,0 +1,228 @@
+// Import all of Bootstrap's CSS
+// $bs-blue: #2192FF;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import "~bootstrap/scss/bootstrap";
+
+
+$background-color: #f1f5f9;
+$button-bg-color: #f4f4f5;
+$button-bg-color-hover: #d2d2d2;
+$button-border-color: #d4d4d8;
+$button-color: #3f3f46;
+$button-active-question: #2192FF;
+$choosen-answer: #000d72;
+// $button-answered: #38E54D;
+$button-answered: #38E54D;
+$button-answered-active-question: #9CFF2E;
+
+$navbar-active-color: #F2BB16;
+
+// form login
+$box-color: #1c1c1c;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+body {
+
+    &.default-background {
+        background-color: $background-color;
+    }
+
+    &.login-background {
+        background-image: url('/resources/images/login.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}
+
+.exam-number-button {
+    height: auto;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    background-color: $button-bg-color;
+    border-color: $button-border-color;
+    color: $button-color;
+
+    display: inline-block;
+
+    // -webkit-user-select: none;
+    // -ms-user-select: none;
+    // user-select: none;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $button-bg-color-hover;
+    }
+
+    &.answered {
+        background-color: $button-answered;
+    }
+
+    &.active {
+        background-color: $button-active-question;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    &.active.answered {
+        background-color: $button-answered-active-question;
+
+    }
+}
+
+.nav-item {
+
+    .nav-link {
+        color: #b3b3b3;
+
+        &.active {
+            font-weight: bold;
+        }
+    }
+}
+
+.answer-a {
+    width: 40px;
+    height: 40px;
+    background-color: $button-bg-color;
+
+    &::before {
+        content: 'A';
+    }
+}
+
+.answer-container {
+    margin-bottom: 1rem;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .option {
+        overflow: hidden;
+        cursor: pointer;
+
+        .answer-statement {
+            display: flex;
+            align-items: center;
+
+            .btn-answer {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background-color: $button-bg-color;
+                border: 1px solid $button-border-color;
+
+                &:hover {
+                    background-color: $button-bg-color-hover;
+                }
+            }
+        }
+
+        input {
+            display: none;
+
+            &:checked+.answer-statement .btn-answer {
+                background-color: $choosen-answer;
+                color: #fff;
+            }
+        }
+
+    }
+}
+
+// Login page
+
+.font-secular {
+    font-family: 'Secular One', sans-serif;
+}
+
+#login-page {
+    .nav-link {
+
+        &.active {
+            color: $navbar-active-color;
+        }
+    }
+}
+
+.navbar {
+    font-family: 'Secular One', sans-serif;
+}
+
+.hero {
+    .text {
+        font-family: 'League Spartan', sans-serif;
+        font-weight: 800;
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+}
+
+.box {
+    background-color: $box-color;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+        transform-origin: bottom right;
+        animation: animate 4s linear infinite;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+        transform-origin: bottom right;
+        animation: animate 4s linear infinite;
+        animation-delay: -2s;
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin: 5px;
+        background-color: #28292d;
+        z-index: 100;
+    }
+
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+footer {
+    font-family: 'Secular One', sans-serif;
+}
