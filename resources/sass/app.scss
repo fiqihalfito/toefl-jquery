@@ -174,6 +174,7 @@ body {
 
 .box {
     background-color: $box-color;
+    font-family: 'Secular One', sans-serif;
     position: relative;
     overflow: hidden;
 
@@ -222,6 +223,57 @@ body {
         transform: rotate(360deg);
     }
 }
+
+.input-area {
+    position: relative;
+
+    span {
+        position: absolute;
+        padding: 20px;
+        left: 0;
+        font-size: large;
+        pointer-events: none;
+        transition: 0.5s;
+    }
+
+    input {
+        width: 100%;
+        padding: 20px;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 5px;
+        outline: none;
+        font-size: large;
+
+        &:focus {
+            border: 1px solid #45f3ff;
+        }
+    }
+
+    input:valid~span,
+    input:focus~span {
+        color: #45f3ff;
+        transform: translateY(-50%) translateX(20px);
+        background-color: #28292d;
+        font-size: smaller;
+        padding: 0 10px;
+    }
+
+}
+
+#register-submit-button {
+    // width: 1rem;
+    padding: 5px 30px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #F8BA2F;
+
+    &:hover {
+        background-color: #FA8423;
+    }
+}
+
 
 footer {
     font-family: 'Secular One', sans-serif;

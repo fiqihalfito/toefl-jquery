@@ -11,7 +11,7 @@
 
             <div class="container d-flex flex-column justify-content-between vh-100 text-light" id="login-page">
                 <nav class="navbar navbar-expand-lg w-100">
-                    <div class="d-flex mx-auto">
+                    <div class="d-flex mx-md-auto">
                         <a class="navbar-brand text-light" href="#">TOEFL Simulation</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
@@ -39,26 +39,24 @@
 
                 <section class="hero">
                     <div class="row align-items-center ">
-                        <div class="col-7">
+                        <div class="col col-md-7">
                             <div class="text text-uppercase">
                                 Practice Your English For Better Future
                             </div>
                         </div>
-                        <div class="col-5">
+                        <div class="col col-md-5 mt-3 mt-md-0">
                             <div class="box rounded d-flex justify-content-center align-items-center">
                                 <form action="/register" method="post" class="p-5 rounded-3">
                                     @csrf
-                                    <div class="mb-3">
-                                        <label for="nama" class="form-label font-secular">Name</label>
-                                        <input type="text" class="form-control" id="nama" name="name">
+                                    <div class="mb-3x input-area">
+                                        <p class="text-uppercase text-muted">register your name</p>
+                                        <input type="text" id="register-name" name="name" required>
+                                        <span id="register-label-name">Full Name</span>
                                     </div>
-                                    <button type="submit" class="btn btn-primary rounded-0">Register</button>
+                                    <button type="submit" class="mt-3" id="register-submit-button">Register</button>
                                 </form>
                             </div>
                         </div>
-                        {{-- <div class="col landing-image">
-            <img src="{{ Vite::asset('resources/images/landing.png') }}" class="img-fluid" alt="">
-        </div> --}}
                     </div>
                 </section>
 
